@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .clip-l-15 {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .clip-l-20 {
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FFF #0031A5;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0031A5;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #FFF;
+}
