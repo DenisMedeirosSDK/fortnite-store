@@ -34,7 +34,7 @@ export function CardProducts({ id, name, slug, price, oldPrice, thumbnail, rarit
         "bg-purple-600": rarity === 'epic',
         "bg-orange-500": rarity === 'legendary',
       })}>
-        <div className="py-2 bg-zinc-800 text-center clip-l-15">
+        <div className="pt-3 bg-zinc-800 text-center clip-l-15">
           <p className="font-cursive text-white text-xl uppercase">{name}</p>
         </div>
       </div>

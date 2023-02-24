@@ -1,14 +1,33 @@
+import { GetProductBySlugQuery } from "@/graphql/generate";
+import { useEffect, useState } from "react";
 import { CardFooter } from "./Footer";
 import { CardHeader } from "./Header";
 
-export function CardDetails() {
+interface Props {
+  props: GetProductBySlugQuery | undefined
+}
+
+export function CardDetails({ props }: Props) {
+
+  const [description, setDescription] = useState('')
+
+
+  useEffect(() => {
+
+    if (props?.productID?.description.markdown) {
+      setDescription(props?.productID?.description.markdown)
+    }
+  }, [props?.productID?.description.markdown])
+
   return (
     <div className="flex flex-col xl:max-w-[640px] xl:w-full">
-      <CardHeader />
+      <CardHeader name={props?.productID?.title} category={props?.productID?.category} rarity={props?.productID?.rarity} />
       <div className="p-4 flex flex-col justify-center bg-fortnite-blue-700 max-h-[460px] min-h-[460px]">
         <div className="flex flex-1">
-          <p className="font-semibold text-white">Miniatura Rex na posição do emote passinho dinâmico.
-            Altura de 15cm - Escala 1/10
+          <p className="font-semibold text-white">
+            {/* <ReactMarkdown > */}
+            {description}
+            {/* </ReactMarkdown> */}
           </p>
         </div>
         {/* <img src="/Rex_Fortnite.png" alt="" className="h-80 object-contain" /> */}
@@ -27,7 +46,7 @@ export function CardDetails() {
           </button>
         </div>
       </div>
-      <CardFooter price={14900} oldPrice={25000} />
+      <CardFooter price={props?.productID?.price} oldPrice={props?.productID?.oldPrice} />
       {/* <CardDescription /> */}
     </div>
   )

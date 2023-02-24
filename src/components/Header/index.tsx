@@ -24,13 +24,17 @@ const MENU: Menu[] = [
     path: '/cart'
   },
   {
+    name: 'VESTIÁRIO',
+    path: '/cart'
+  },
+  {
     name: 'ENTRAR',
     path: '/login'
   },
-  {
-    name: 'CADASTRAR-SE',
-    path: '/register'
-  },
+  // {
+  //   name: 'CADASTRAR-SE',
+  //   path: '/register'
+  // },
 ]
 
 export function Header() {

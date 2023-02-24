@@ -1,0 +1,21 @@
+query GetProducts {
+    products {
+    id
+    price
+    oldPrice
+    rarity
+    slug
+    title
+    category
+    description {
+      markdown
+    }
+    thumbnail {
+      url
+    }
+    images {
+      url
+      id
+    }
+  }
+  }
